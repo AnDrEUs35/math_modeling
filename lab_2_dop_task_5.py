@@ -1,24 +1,22 @@
 n = int(input('введите число: '))
 n = n + 1
-for sov_ch in range(n):
+x = 0
+'''
+for i in range(n):
+    x += 1
+    for sov_ch in range(n):
+        if x % 2 == 0:
+            x / 2
+        elif x % 3 == 0:
+            x / 3    
+        elif x % 5 == 0:
+            x / 5
+        elif x % 7 == 0:
+            x / 7    
+        elif x % 7 == 0 or x % 5 == 0 or x % 3 == 0 or x % 2 == 0:
+            print(x)
+    if x         
 
-    if sov_ch % 2 == 0 :
-        sov_ch = sov_ch / 2
-        print(2, end='')
-    elif sov_ch % 3 == 0 :
-        sov_ch = sov_ch / 3
-        print(3, end='*')
-    elif sov_ch % 5 == 0 :
-        sov_ch = sov_ch / 5
-        print(5, end='*')
-    elif sov_ch % 7 == 0 :
-        sov_ch = sov_ch / 7
-        print(7, end='*')
-    elif sov_ch % sov_ch == 0:
-        if sov_ch == 1:
-            sov_ch * 0
-        else:    
-            print(sov_ch)    
-        break
+    print(x)
+    '''
 
-    print(sov_ch)
