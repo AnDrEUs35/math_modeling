@@ -14,15 +14,18 @@ print(D)
 
 if D > 0:
     print('2 корня')
+    x1 = (-b + D ** 0.5) / 2 * a
+    x2 = (-b - D ** 0.5) / 2 * a
+    print(x1)
+    print(x2)
 elif D == 0:
     print('1 корень')
+    x1 = (-b + D ** 0.5) / 2 * a
+    print(x1)
 elif D < 0:
     print('нет корней')
 
-x1 = (-b + D ** 0.5) / 2 * a
-x2 = (-b - D ** 0.5) / 2 * a
-print(x1)
-print(x2)
+
 
 
 
