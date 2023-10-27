@@ -20,6 +20,7 @@ for i in range(4):
     for i in range(3):
         y += 1
         b[x, y] = int(input('введите массив b: '))
+        
 x = -1
 for i in range(4):
     x += 1
