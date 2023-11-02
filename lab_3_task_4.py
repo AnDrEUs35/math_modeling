@@ -1,21 +1,18 @@
 import numpy as np
-N = int(input('введите число:'))
-M = int(input('введите число:'))
-i = -1
-j = -1
-A = np.zeros((N, M))
-
+#A[i, j] = sin(N · (i+1) + M · (j + 1)) 
+M = int(input('введите'))
+N = int(input('введите'))
+NxM = np.zeros(N, M)
+i = np.arange(0, N)
+j = np.arange(0, M)
 
 for i in range(N):
-    i +=1
+    i += 1
     for j in range(M):
-        j += 1 
-        A[i, j] = np.sin(N * i + M * j)
-print(A)
+        j += 1
+        NxM[i, j] = np.sin(N * i + M * j)
 
-
-
-
+print(NxM)
 
 
 

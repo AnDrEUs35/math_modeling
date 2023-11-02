@@ -2,9 +2,8 @@ import numpy as np
 from lab_3_task_1 import svobodnoe_padenie as g
 a = np.pi / 3
 h = 100
-b = 30
-
-V = ((g * h * np.tan(b) ** 2) / (2 * np.cos(a) ** 2 * (1 - np.tan(b) * np.tan(a))))
+b = 30 
+V = ((g * h * (np.tan(b) ** 2)) / (2 * (np.cos(a) ** 2) * (1 - np.tan(b) * np.tan(a))))
 print(V)
 
 from lab_3_task_1 import chislo_Eylera, postoyannaya_Bolcmana, postoyannaya_planka

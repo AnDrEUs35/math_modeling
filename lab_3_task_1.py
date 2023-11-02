@@ -9,7 +9,7 @@ massa_pokoya_electrona = 9.109534 * 10 ** (-11)
 massa_pokoya_protona = 1.6726485 * 10 ** (-27)
 chislo_pi = 3.14
 chislo_Eylera = 2.71828
-postoyannaya_Bolcmana = 1.380662 * 10 ** -23
-postoyannaya_planka = 6.626176 * 10 ** -34
+postoyannaya_Bolcmana = 1.380662 * 10 ** (-23)
+postoyannaya_planka = 6.626176 * 10 ** (-34)
 postoyannaya_Faradeya = 96484.56
 
