@@ -15,5 +15,10 @@ for i in range(0, len(slice2)):
     
 slice1 = np.array(d)
 slice2 = np.array(c)
-print(slice1)
-print(slice2)
+
+for i in range(len(slice1)):
+    NxM[i,0] = slice1[i]
+
+for i in range(len(slice2)):
+    NxM[i, 1] = slice2[i]
+print(NxM)
