@@ -1,5 +1,5 @@
 import numpy as np
-#A[i, j] = sin(N · i + M · j) 
+
 M = int(input('введите ')) 
 N = int(input('введите '))
 NxM = np.zeros((N, M))
@@ -7,7 +7,11 @@ NxM = np.zeros((N, M))
 
 for i in np.arange(N):
     for j in np.arange(M):
-        NxM[i, j] = np.sin(N * (i + 1) + M * (j + 1))
+        if i == 0 and j == 0:
+            NxM[i, j] = np.sin(N * (i + 1) + M * (j + 1))
+        else:
+            NxM[i, j] = np.sin(N * i + M * j) 
+
 
 
 for i in range(N):
