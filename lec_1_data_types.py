@@ -20,3 +20,5 @@ print(type(False))
 
 print(type(None))
 
+print(type(range))
+
