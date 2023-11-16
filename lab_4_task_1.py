@@ -1,22 +1,25 @@
 import numpy as np
-srednee = 0
+
+kolvo = 5
+mass = []
+
+for i in range(0, kolvo):
+    mass.append(int(input('Введите эл. массива: ')))
+mass = np.array(mass)
+
 i = -1
-def sr_arifm(x):
-    for i in range(0, max(x)):
-        if srednee == 0:
+
+def sr_arifm(x, y):
+    srednee = None
+    for i in range(0, y):
+        if srednee == None:
             srednee = x[i]
-        else:
-            srednee = srednee + x[i]  
+        elif srednee != None:
+            srednee = srednee + x[i] 
+    srednee = srednee / y    
     return srednee
 
-srednee = sr_arifm
-
-mass = np.zeros((3))
-for i in range(0, 3):
-    mass[i] = int(input('Введите эл. массива: ')) 
-
-sr_arifm(mass)
-
-print(sr_arifm(srednee))
+srednee = sr_arifm(mass, kolvo)
+print(srednee)
 
 
