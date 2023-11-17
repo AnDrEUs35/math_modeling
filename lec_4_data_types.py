@@ -46,7 +46,7 @@ l[0] = 1000 # списки изменять можно
 print(l)
 
 #Dict
-d = {'al':4, 4:'al', 'str':'Hello'} # al, str - ключи
+d = {'al':4, 4:'al', 'print' 'str':'Hello'} # al, str, 4 - ключи
 print(d['al']) # можно вызывать ключами
 print(d[4])
 print(d['str'])
