@@ -3,11 +3,6 @@ from constants import svobodnoe_padenie as g
 h = float(input('Введите высоту: '))
 m = float(input('Введите массу: '))
 
-# x - скорость
-# y - высота
-# z - масса
-# u - ускорение
-
 def energia(h, m, g):
     E = m * g * h
     c = h / 0.5
