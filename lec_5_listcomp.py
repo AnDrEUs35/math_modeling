@@ -5,7 +5,7 @@ print(symbol_codes)
 
 
 symbols = 'pithon'
-symbol_codes = (ord(symbol) for symbol in symbols) #ord дает значениям значения в ACKII кодах
+symbol_codes = (ord(symbol) for symbol in symbols) #ord дает значениям значения в ASCII кодах
 print(symbol_codes)
 
 for object in symbol_codes:
