@@ -5,7 +5,7 @@ import numpy as np
 def cilcle_plotter(radius=10):
     x = np.arange(-2 * radius, 2 * radius, 0.1)
     y = np.arange(-2 * radius, 2 * radius, 0.1)
-
+    return x == y
     # переход к неявнозаданным координатам
     x, y = np.meshgrid(x, y)
 
