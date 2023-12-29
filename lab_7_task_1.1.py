@@ -18,8 +18,8 @@ if __name__ == '__main__':
 
     edge = 20
     plt.axis('equal')
-    ax.set_xlim(-1, edge)
-    ax.set_ylim(-1, edge)
+    ax.set_xlim(-edge, edge)
+    ax.set_ylim(-edge, edge)
 
     ani = FuncAnimation(fig, animate, frames=360, interval=50)
     ani.save('animation_lab_1.1.gif')

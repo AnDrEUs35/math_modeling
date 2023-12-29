@@ -9,7 +9,7 @@ def move(R, angle_vel, time):
     return x, y
 
 def animate(i):
-    ball.set_data(move(R=2, angle_vel=1, time=i))
+    ball.set_data(move(R=2, angle_vel=np.arange(0, np.pi, 0.01), time=i))
 
 
 if __name__ == '__main__':
