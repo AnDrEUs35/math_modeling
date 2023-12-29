@@ -8,11 +8,11 @@ def butterfly_draw(t, e):
     return x, y
 
 def animate(i):
-    butterfly.set_data(butterfly_draw(t = np.arange(0, 12 * np.pi, 0.1), e=2.7182818284590452353602874713527 ))
+    butterfly.set_data(butterfly_draw(t=np.arange(0, 2 * np.pi, 0.01) * np.pi / 180 * i, e=2.7182818284590452353602874713527 ))
 
 if __name__ == '__main__':
     fig, ax = plt.subplots()
-    butterfly, = plt.plot([], [], '-', color='r', label='ball')
+    butterfly, = plt.plot([], [], '-', color='r')
 
     edge = 5
     plt.axis('equal')
@@ -34,7 +34,7 @@ def hearth_draw(t):
     return x, y
 
 def animate(i):
-    hearth.set_data(hearth_draw(t=np.arange(0, 2 * np.pi, 0.01)))
+    hearth.set_data(hearth_draw(t=np.arange(0, 2 * np.pi, 0.01) * np.pi /180 * i))
 
 
 if __name__ == '__main__':
@@ -48,7 +48,5 @@ if __name__ == '__main__':
 
     ani = FuncAnimation(fig, animate, frames=360, interval=30)
     ani.save('animation_lab_3.2.gif')
-
-
 
 
