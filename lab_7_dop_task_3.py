@@ -9,11 +9,13 @@ def drawing_star(t):
 def spin_star(t, x, y):
     X = x * np.cos(t) - y * np.sin(t)
     Y = x * np.sin(t) + y * np.cos(t)
+    return X, Y
 
 
 def animate(i):
     star.set_data(drawing_star(t=np.arange(0, 4 * np.pi, 0.001)))
-    
+    x, y = drawing_star(t=np.arange(0, 4 * np.pi, 0.001))
+    star.set_data(spin_star, x, y, t=np.arange(0, 4 * np.pi, 0.001) * i)
 if __name__ == '__main__':
     fig, ax = plt.subplots()
     star, = plt.plot([], [], 'o', color='yellow')

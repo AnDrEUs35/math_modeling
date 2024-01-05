@@ -22,10 +22,7 @@ if __name__ == '__main__':
     ax.set_xlim(-edge, edge)
     ax.set_ylim(-edge, edge)
 
-    ani = FuncAnimation(fig,
-                        animate,
-                        frames=360,
-                        interval=30)
+    ani = FuncAnimation(fig, animate, frames=360, interval=30)
     ani.save('animation_3.gif')
 
 
