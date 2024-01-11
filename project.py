@@ -2,18 +2,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
-def drawing1(A1, f1, t):
+def drawing1(A1, f1, t, x0):
     y1 = A1 * np.sin(f1 * t)
-    x = 5 * t 
+    x = x0 + 5 * t 
     return x, y1
-def drawing2(A2, f2, t):
+def drawing2(A2, f2, t, x0):
     y2 = A2 * np.sin(f2 * t)
-    x = 5 * t
+    x = x0 + 15 * t
     return x, y2
 
 def animate(i):
-    sin1.set_data(drawing1(A1=5, f1=10, t=np.arange(0, 10, 0.01) * np.pi / 180 * i ))
-    sin2.set_data(drawing2(A2=5, f2=10, t=np.arange(-10, 0, 0.01) * np.pi / 180 * i ))
+    sin1.set_data(drawing1(A1=5, f1=np.arange(0, 10, 0.01) * np.pi / 180 * i, t=np.arange(0, 10, 0.01), x0=np.arange(0, 5, 0.005)))
+    sin2.set_data(drawing2(A2=5, f2=np.arange(0, 5, 0.005) * np.pi / 180 * i, t=np.arange(-10, 0, 0.01), x0=np.arange(0, 5, 0.005)))
 
 
 if __name__ == '__main__':
@@ -25,7 +25,7 @@ if __name__ == '__main__':
     plt.axis('equal')
     ax.set_xlim(-edge, edge)
     ax.set_ylim(-edge, edge)
-
+    
     ani = FuncAnimation(fig, animate, frames=180, interval=60)
     ani.save('project.gif')
 
