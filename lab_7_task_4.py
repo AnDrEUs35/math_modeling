@@ -6,8 +6,8 @@ from matplotlib.animation import FuncAnimation
 def drawing(C, D, y0, x0, time):
     xn1 = x0 * time
     yn1 = y0 * time
-    xn = (xn1 ** 2 - yn1 ** 2 + C)
-    yn = (2 * xn1 * yn1 + D)
+    xn = xn1 ** 2 - yn1 ** 2 + C
+    yn = 2 * xn1 * yn1 + D
     return xn, yn
 
 def animate(i):
