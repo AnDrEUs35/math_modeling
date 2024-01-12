@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
+# эффект Доплера
 
 def drawing1(A1, f1, t, x0):
     y1 = A1 * np.sin(f1 * t)
@@ -21,7 +22,7 @@ if __name__ == '__main__':
     sin1, = plt.plot([], [], '-', color='r')
     sin2, = plt.plot([], [], '-', color='b')
 
-    edge = 30
+    edge = 200
     plt.axis('equal')
     ax.set_xlim(-edge, edge)
     ax.set_ylim(-edge, edge)
