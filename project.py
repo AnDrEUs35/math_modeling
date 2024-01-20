@@ -15,9 +15,17 @@ def drawing2(A, f, x0):
     x = x0 + -t
     return x, y
 
+def circle(f, x0):
+    R = 0.2
+    x = x0 + R * np.cos(f)
+    y = R * np.sin(f)
+    return x, y
+
+# как сделать так, чтобы частота волн менялась со временем (я моделирую эффект Доплера)
 def animate(phi):
     sin1.set_data(drawing1(A=1.5, f=phi, x0=phi * 0.5))
     sin2.set_data(drawing2(A=1.5, f=-phi, x0=phi * 0.5))
+    point.set_data(circle(x0=phi * 0.5, f=np.linspace(0, 7, 70)))
 
 # создаем фигуру и оси
 fig, ax = plt.subplots()
@@ -25,6 +33,7 @@ fig, ax = plt.subplots()
 
 sin1, = plt.plot([], [], '-', color='r')
 sin2, = plt.plot([], [], '-', color='b')
+point, = plt.plot([], [], '-', color='green')
 
 # устанавливаем пределы осей
 edge = 5
