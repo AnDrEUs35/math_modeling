@@ -4,13 +4,13 @@ from matplotlib.animation import FuncAnimation
 
 # определяем функции для рисования синей и красной волн
 def drawing1(A, f, x0):
-    t = np.linspace(0, 2, 100)
+    t = np.linspace(0, 3, 100)
     y = A * np.sin(f * t)
     x = x0 + t 
     return x, y
 
 def drawing2(A, f, x0):
-    t = np.linspace(0, 2, 100)
+    t = np.linspace(0, 3, 100)
     y = A * np.sin(f * t)
     x = x0 + -t
     return x, y
