@@ -4,13 +4,13 @@ from matplotlib.animation import FuncAnimation
 
 # определяем функции для рисования синей и красной волн
 def drawing1(A, f, x0):
-    t = np.linspace(0, 5, 100)
+    t = np.linspace(0, 6, 100)
     y = A * np.sin(f * t)
     x = x0 + t 
     return x, y
 
 def drawing2(A, f, x0):
-    t = np.linspace(0, 5, 100)
+    t = np.linspace(0, 6, 100)
     y = A * np.sin(f * t)
     x = x0 + -t
     return x, y
@@ -24,8 +24,8 @@ def circle(f, x0):
 # как сделать так, чтобы частота волн менялась со временем (я моделирую эффект Доплера)
 def animate(phi):
     sin1.set_data(drawing1(A=np.linspace(1.5, 3, 100), f=phi, x0=phi * 0.5))
-    sin2.set_data(drawing2(A=np.linspace(1.5, 0.5, 100), f=-phi, x0=phi * 0.5))
-    point.set_data(circle(x0=phi * 0.5, f=np.linspace(0, 7, 70)))
+    sin2.set_data(drawing2(A=np.linspace(1.5, 0, 100), f=-phi, x0=phi * 0.5))
+    point.set_data(circle(x0=phi * 0.5, f=np.linspace(0, 7, 90)))
 
 # создаем фигуру и оси
 fig, ax = plt.subplots()
@@ -35,11 +35,13 @@ sin1, = plt.plot([], [], '-', color='r')
 sin2, = plt.plot([], [], '-', color='b')
 point, = plt.plot([], [], '-', color='green')
 
+plt.xlabel('coord: x')
+plt.ylabel('coord: y')
 # устанавливаем пределы осей
-edge = 10
-ax.set_xlim(-edge, edge)
-ax.set_ylim(-edge, edge)
+edge = 12
+ax.set_xlim(-10, edge)
+ax.set_ylim(-10, 10)
 
 # сохраняем анимацию в файл GIF
-ani = FuncAnimation(fig, animate, frames=np.linspace(0, 5, 70), interval=100)
+ani = FuncAnimation(fig, animate, frames=np.linspace(0, 7, 90), interval=100)
 ani.save('project.gif')
