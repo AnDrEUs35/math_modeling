@@ -14,7 +14,7 @@ def move2(R, time, angle_vel):
     return x, y
 def circle_move(R, vx0, time):
     x0 = vx0 * time
-    alpha = np.arange(0, 2 * np.pi, 0.1)
+    alpha = np.arange(0, 3 * np.pi, 0.1)
     x = x0 + R * np.cos(alpha)
     y = R + R * np.sin(alpha)
     return x, y
