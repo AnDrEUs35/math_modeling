@@ -15,34 +15,34 @@ def move_func(s, t):
      x6, vx6, y6, vy6,) = s
     
     dxdt1 = vx1 # -
-    dvxdt1 = k * q * x1 / (x1**2 + y1**2)**1.5
+    dvxdt1 = (k * q * x1 / (x1**2 + y1**2)**1.5) / m
     dydt1 = vy1
-    dvydt1 = k * q * y1 / (x1**2 + y1**2)**1.5
+    dvydt1 = (k * q * y1 / (x1**2 + y1**2)**1.5) / m
     
     dxdt2 = vx2 # +
-    dvxdt2 = -k * q * x2 / (x2**2 + y2**2)**1.5
+    dvxdt2 = -k * q * x2 / (x2**2 + y2**2)**1.5 / m
     dydt2 = vy2
-    dvydt2 = -k * q * y2 / (x2**2 + y2**2)**1.5
+    dvydt2 = -k * q * y2 / (x2**2 + y2**2)**1.5 / m
 
     dxdt3 = vx3 # -
-    dvxdt3 = k * q * x1 / (x3**2 + y3**2)**1.5
+    dvxdt3 = k * q * x1 / (x3**2 + y3**2)**1.5 / m
     dydt3 = vy3
-    dvydt3 = k * q * y1 / (x3**2 + y3**2)**1.5
+    dvydt3 = k * q * y1 / (x3**2 + y3**2)**1.5 / m
 
     dxdt4 = vx4 # -
-    dvxdt4 = k * q * x4 / (x4**2 + y4**2)**1.5
+    dvxdt4 = k * q * x4 / (x4**2 + y4**2)**1.5 / m
     dydt4 = vy4
-    dvydt4 = k * q * y4 / (x4**2 + y4**2)**1.5
+    dvydt4 = k * q * y4 / (x4**2 + y4**2)**1.5 / m
     
     dxdt5 = vx5 # +
-    dvxdt5 = -k * q * x5 / (x5**2 + y5**2)**1.5
+    dvxdt5 = -k * q * x5 / (x5**2 + y5**2)**1.5 / m
     dydt5 = vy5
-    dvydt5 = -k * q * y5 / (x5**2 + y5**2)**1.5
+    dvydt5 = -k * q * y5 / (x5**2 + y5**2)**1.5 / m
 
     dxdt6 = vx6 # +
-    dvxdt6 = -k * q * x6 / (x6**2 + y6**2)**1.5
+    dvxdt6 = -k * q * x6 / (x6**2 + y6**2)**1.5 / m
     dydt6 = vy6
-    dvydt6 = -k * q * y6 / (x6**2 + y6**2)**1.5
+    dvydt6 = -k * q * y6 / (x6**2 + y6**2)**1.5 / m
     
     return (dxdt1, dvxdt1, dydt1, dvydt1,
             dxdt2, dvxdt2, dydt2, dvydt2,
@@ -52,7 +52,9 @@ def move_func(s, t):
             dxdt6, dvxdt6, dydt6, dvydt6,) 
 
 k = 9 * 10**9
-q = 1.67262192 * 10 ** -27
+q1 = 1.67262192 * 10 ** -27
+q = 1.6022 * 10 ** -19
+m = 0.1
 
 s0 = (x01, vx01, y01, vy01,
       x02, vx02, y02, vy02,
