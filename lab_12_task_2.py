@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 from start_data2 import *
 frames = 200
-t = np.linspace(0, 100, frames)
+t = np.linspace(0, 10**(-6), frames)
 
 def move_func(s, t):
     (x1, vx1, y1, vy1,
@@ -12,49 +12,50 @@ def move_func(s, t):
      x3, vx3, y3, vy3,
      x4, vx4, y4, vy4,
      x5, vx5, y5, vy5,
-     x6, vx6, y6, vy6,) = s
+     x6, vx6, y6, vy6) = s
     
-    dxdt1 = vx1 # -
-    dvxdt1 = (k * q * x1 / (x1**2 + y1**2)**1.5) / m
+    dxdt1 = vx1 # - синий
+    dvxdt1 = k * Q * q * x1 / ((x1**2 + y1**2)**1.5 * m)
     dydt1 = vy1
-    dvydt1 = (k * q * y1 / (x1**2 + y1**2)**1.5) / m
+    dvydt1 = k * Q * q * y1 / ((x1**2 + y1**2)**1.5 * m)
     
-    dxdt2 = vx2 # +
-    dvxdt2 = -k * q * x2 / (x2**2 + y2**2)**1.5 / m
+    dxdt2 = vx2 # + красный
+    dvxdt2 = k * Q * -q * x2 / ((x2**2 + y2**2)**1.5 * m)
     dydt2 = vy2
-    dvydt2 = -k * q * y2 / (x2**2 + y2**2)**1.5 / m
+    dvydt2 = k * Q * -q * y2 / ((x2**2 + y2**2)**1.5 * m)
 
-    dxdt3 = vx3 # -
-    dvxdt3 = k * q * x1 / (x3**2 + y3**2)**1.5 / m
+    dxdt3 = vx3 # - коричневый
+    dvxdt3 = k * Q * q3 * x3 / ((x3**2 + y3**2)**1.5 * m)
     dydt3 = vy3
-    dvydt3 = k * q * y1 / (x3**2 + y3**2)**1.5 / m
+    dvydt3 = k * Q * q3 * y3 / ((x3**2 + y3**2)**1.5 * m)
 
-    dxdt4 = vx4 # -
-    dvxdt4 = k * q * x4 / (x4**2 + y4**2)**1.5 / m
+    dxdt4 = vx4 # - зеленый
+    dvxdt4 = k * Q * q * x4 / ((x4**2 + y4**2)**1.5 * m)
     dydt4 = vy4
-    dvydt4 = k * q * y4 / (x4**2 + y4**2)**1.5 / m
+    dvydt4 = k * Q * q * y4 / ((x4**2 + y4**2)**1.5 * m)
     
-    dxdt5 = vx5 # +
-    dvxdt5 = -k * q * x5 / (x5**2 + y5**2)**1.5 / m
+    dxdt5 = vx5 # + пурпурный
+    dvxdt5 = k * Q * -q * x5 / ((x5**2 + y5**2)**1.5 * m)
     dydt5 = vy5
-    dvydt5 = -k * q * y5 / (x5**2 + y5**2)**1.5 / m
+    dvydt5 = k * Q * -q * y5 / ((x5**2 + y5**2)**1.5 * m)
 
-    dxdt6 = vx6 # +
-    dvxdt6 = -k * q * x6 / (x6**2 + y6**2)**1.5 / m
+    dxdt6 = vx6 # + голубой
+    dvxdt6 = k * Q * -q * x6 / ((x6**2 + y6**2)**1.5 * m)
     dydt6 = vy6
-    dvydt6 = -k * q * y6 / (x6**2 + y6**2)**1.5 / m
+    dvydt6 = k * Q * -q * y6 / ((x6**2 + y6**2)**1.5 * m)
     
     return (dxdt1, dvxdt1, dydt1, dvydt1,
             dxdt2, dvxdt2, dydt2, dvydt2,
             dxdt3, dvxdt3, dydt3, dvydt3,
             dxdt4, dvxdt4, dydt4, dvydt4,
             dxdt5, dvxdt5, dydt5, dvydt5,
-            dxdt6, dvxdt6, dydt6, dvydt6,) 
+            dxdt6, dvxdt6, dydt6, dvydt6) 
 
 k = 9 * 10**9
-q1 = 1.67262192 * 10 ** -27
-q = 1.6022 * 10 ** -19
-m = 0.1
+q = -1.67262192 * 10 ** (-27)
+q3 = -1.67 * 10 ** (-28)
+Q = 5 * 10 ** (-3)
+m = 9.1093837 * 10 ** -31
 
 s0 = (x01, vx01, y01, vy01,
       x02, vx02, y02, vy02,
@@ -148,7 +149,7 @@ ani = FuncAnimation(fig, animate, frames=frames, interval=30)
 
 plt.axis('equal')
 
-edge = 200
+edge = 0.5
 ax.set_xlim(-edge, edge)
 ax.set_ylim(-edge, edge)
 ani.save('lab_12_task_2.gif')
